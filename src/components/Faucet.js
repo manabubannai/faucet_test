@@ -1,8 +1,8 @@
-import Message from './Message'
 import { useState } from 'react';
 import { ethers } from 'ethers'
 import Card from 'react-bootstrap/Card'
 import Button from 'react-bootstrap/Button'
+import Message from './Message'
 
 const tokenAddress = "0x5000330c4b6F54f77bee9611a2918f64C4d69725"
 
@@ -42,9 +42,9 @@ const Faucet = (props) => {
         <div className="d-grid gap-2">
         <Button onClick={faucet}>get faucet token!</Button>
         <Button onClick={getBalance} variant="warning">check my balance</Button>
+        { showBalance ? <Message balance={balance}/> : null }
         </div>
         </Card.Body>
-        { showBalance ? <Message balance={balance}/> : null }
         </Card>
         </div>
     )
